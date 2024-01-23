@@ -1,55 +1,47 @@
-// function makePerson(first, last, age) {
-//     return {
-//         first: first,
-//         last: last,
-//         age: age,
-//         isAlive: true
-//     }
-// }
+/* Write an ES2015 Version */
 
-function makePerson(first, last, age) {
-    return {
-        first,
-        last,
-        age,
-        isAlive: true
-    }
+function createInstructor(firstName, lastName) {
+  return {
+      firstName,
+      lastName
+  }
 }
 
-// old way
-const mathStuff = {
-    x: 200,
-    add: function (a, b) {
-        return a + b
-    },
-    square: function (a) {
-        return a * a
-    } 
-}
-//mathStuff.add(8,9)
-//mathStuff.square(8,9)
 
-//DO NOT use arrow functions
-const mathStuffTwo = {
-    x: 200,
-    add (a, b) {
-        return a + b
-    },
-    square (a) {
-        return a * a
-    },
-    multiply: (a, b) => {
-        return a * b
-    }
+/* Write an ES2015 Version */
+const favoriteNumber = 42
+
+const instructorOne = {
+  firstName: "colt",
+  [favoriteNumber]: "that is my favorite number"
 }
 
-function makeColor(name, hex) {
-    return {
-        name: hex,
-        hex: name
-    }
+/* Write an ES2015 Version */
+
+const instructor = {
+  firstName: "colt",
+  sayHi() {
+      return "hi"
+  },
+  sayBye() {
+      return this.firstName + " says bye!"
+  }
 }
 
-const mystery = {
-    [6 + 7]: 'thirteen'
+
+const d = createAnimal("dog", "bark", "Woooof!")
+// {species: "dog", bark: ƒ}
+d.bark()  //"Woooof!"
+
+const s = createAnimal("sheep", "bleet", "BAAAAaaaa")
+// {species: "sheep", bleet: ƒ}
+s.bleet() //"BAAAAaaaa"
+
+function createAnimal(species, verb, noise){
+return {
+  species,
+  [verb](){
+    return noise;
+  }
+}
 }
